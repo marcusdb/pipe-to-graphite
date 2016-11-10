@@ -17,6 +17,21 @@ to graphite at regular intervals. The expected output is something like this:
 _NOTE: Your script must finish with an exit code of 0 or the output won't be
 sent to graphite (though it will be logged along with a failure message)._
 
+```
+$ > git clone git://github.com/iFixit/pipe-to-graphite.git
+$ > cd pipe-to-graphite
+$ > ./pipe-to-graphite.sh scripts/memcache-stats.sh
+Running 'scripts/memcache-stats.sh' as a test.. SUCCESS
+
+Redirecting stdout to /dev/null so it doesn't mess up your
+terminal.  Redirect it somewhere else if you wan't to save it.
+
+Command: scripts/memcache-stats.sh
+is being piped to graphite every 10 seconds
+Background PID: 18637
+$ >
+```
+
 ### Example
 Lets say you want to monitor the `glorkd` program. Let's say glorkd comes with
 a script `/usr/glork/status` that spits out something like this:
